@@ -28,5 +28,4 @@ const SearchPokemon = () => {
     </div>
   );
 };
-//mtg api use this https://docs.magicthegathering.io/
 export default SearchPokemon;

@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import SearchPokemon from "./components/SearchPokemon/SearchPokemon";
-import ClearButton from "./components/ClearButton/ClearButton";
 import PokemonContext from "./context/pokemon/pokemonContext";
 import PokemonCard from "./components/PokemonCard/PokemonCard";
 import ExamplePokemon from "./components/ExamplePokemon/ExamplePokemon";
 import loader from "./images/loading.svg"; //turn into a component later
+
+import SearchPokemonPage from "./layout/SearchPokemonPage/SearchPokemonPage";
+import NavBar from "./layout/NavBar/NavBar";
 
 import "./App.css";
 
@@ -20,12 +22,17 @@ const App = () => {
   );
   return (
     <div>
-      <ExamplePokemon />
-      <div className="input">
-        <SearchPokemon />
-        <ClearButton />
-      </div>
-      {display ? card : <div></div>}
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/search" component={SearchPokemonPage} />
+        </Switch>
+        <Switch>
+          <Route exact path="/examplepokemon" component={ExamplePokemon} />
+        </Switch>
+
+        {display ? card : <div></div>}
+      </Router>
     </div>
   );
 };
