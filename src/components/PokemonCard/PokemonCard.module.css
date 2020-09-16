@@ -1,0 +1,25 @@
+.container {
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+.card {
+  max-width: 50%;
+  background-color: #fcffdb;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.imageContainer {
+  display: flex;
+  margin: 6rem 0;
+}
+.imageContainer p:first-child {
+  margin-right: 1rem;
+}
+.imageContainer img {
+  margin-right: 0.4rem;
+  align-self: flex-start;
+}

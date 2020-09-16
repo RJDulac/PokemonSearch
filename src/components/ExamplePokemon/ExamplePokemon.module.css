@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.pokemon {
+  margin-top: 1rem;
+  background-color: aqua;
+  padding: 0 0.5rem;
+  border: black solid 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: capitalize;
+}

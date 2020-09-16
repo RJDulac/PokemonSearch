@@ -1,6 +1,8 @@
 export const SEARCH_POKEMON = "SEARCH_POKEMON";
-export const GET_POKEMON = "GET_POKEMON";
+export const GET_ALL_POKEMON = "GET_ALL_POKEMON";
 export const CLEAR_POKEMON = "CLEAR_POKEMON";
 export const SET_LOADING = "SET_LOADING";
+export const DISPLAY_CONTENT = "DISPLAY_CONTENT";
 export const SET_ALERT = "SET_ALERT";
 export const REMOVE_ALERT = "REMOVE_ALERT";
+export const EXAMPLE_POKEMON = "EXAMPLE_POKEMON";
