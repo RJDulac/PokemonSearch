@@ -5,7 +5,9 @@ import style from "./ExamplePokemon.module.css";
 const ExamplePokemon = () => {
   const pokemonContext = useContext(PokemonContext);
   useEffect(() => {
-    pokemonContext.getExamplePokemon();
+    if (pokemonContext.examplePokemon.length <= 0) {
+      pokemonContext.getExamplePokemon();
+    }
   }, []);
 
   const onClick = (e) => {

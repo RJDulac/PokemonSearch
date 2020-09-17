@@ -33,13 +33,14 @@ export default (state, action) => {
         display: false,
       };
     case EXAMPLE_POKEMON:
+      console.log("Example Pokemon requested", action.payload);
       return {
         ...state,
         examplePokemon: action.payload,
         loading: true,
       };
     case GET_ALL_POKEMON:
-      console.log("Get all pokemon loaded", action.payload);
+      console.log("Get all pokemon requested", action.payload);
       return {
         ...state,
         allPokemon: action.payload,

@@ -3,9 +3,11 @@ import PokemonContext from "../../context/pokemon/pokemonContext";
 
 const DisplayAllPokemon = () => {
   const pokemonContext = useContext(PokemonContext);
+
   useEffect(() => {
-    pokemonContext.getAllPokemon();
-    console.log("use effect loaded");
+    if (pokemonContext.allPokemon.length <= 0) {
+      pokemonContext.getAllPokemon();
+    }
   }, []);
   //console.log(pokemonContext.allPokemon);
   return (
