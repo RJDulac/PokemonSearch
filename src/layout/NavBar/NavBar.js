@@ -10,7 +10,7 @@ const NavBar = () => (
       <Link to="/search">Search Pokemon</Link>
     </li>
     <li>
-      <Link to="/examplepokemon">Example Pokemon</Link>
+      <Link to="/all">Display All Pokemon</Link>
     </li>
   </div>
 );

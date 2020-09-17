@@ -5,6 +5,7 @@ import PokemonContext from "./context/pokemon/pokemonContext";
 import PokemonCard from "./components/PokemonCard/PokemonCard";
 import ExamplePokemon from "./components/ExamplePokemon/ExamplePokemon";
 import loader from "./images/loading.svg"; //turn into a component later
+import DisplayAllPokemon from "./components/DisplayAllPokemon/DisplayAllPokemon";
 
 import SearchPokemonPage from "./layout/SearchPokemonPage/SearchPokemonPage";
 import NavBar from "./layout/NavBar/NavBar";
@@ -25,10 +26,13 @@ const App = () => {
       <Router>
         <NavBar />
         <Switch>
+          <Route exact path="/all" component={DisplayAllPokemon} />
+        </Switch>
+        <Switch>
           <Route exact path="/search" component={SearchPokemonPage} />
         </Switch>
         <Switch>
-          <Route exact path="/examplepokemon" component={ExamplePokemon} />
+          <Route exact path="/" component={ExamplePokemon} />
         </Switch>
 
         {display ? card : <div></div>}

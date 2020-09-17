@@ -15,6 +15,7 @@ const PokemonState = (props) => {
   const intialState = {
     pokemon: [],
     examplePokemon: [],
+    allPokemon: [],
     loading: true,
     display: false,
   };
@@ -30,7 +31,7 @@ const PokemonState = (props) => {
     });
     setLoading(false);
   };
-  //get all pokemon
+  //get example pokemon
   const getExamplePokemon = async () => {
     setLoading(true);
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=40`);
@@ -38,6 +39,17 @@ const PokemonState = (props) => {
       type: EXAMPLE_POKEMON,
       payload: res.data.results,
     });
+    setLoading(false);
+  };
+  //get all pokemon
+  const getAllPokemon = async () => {
+    setLoading(true);
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=1050`);
+    dispatch({
+      type: GET_ALL_POKEMON,
+      payload: res.data.results,
+    });
+    setLoading(false);
   };
   //clear pokemon
   const clearPokemon = () => {
@@ -54,13 +66,15 @@ const PokemonState = (props) => {
   return (
     <PokemonContext.Provider
       value={{
-        examplePokemon: state.examplePokemon,
         pokemon: state.pokemon,
+        examplePokemon: state.examplePokemon,
+        allPokemon: state.allPokemon,
         loading: state.loading,
         display: state.display,
         searchPokemon,
         clearPokemon,
         getExamplePokemon,
+        getAllPokemon,
         setLoading,
         displayContent,
       }}

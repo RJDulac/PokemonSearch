@@ -38,6 +38,13 @@ export default (state, action) => {
         examplePokemon: action.payload,
         loading: true,
       };
+    case GET_ALL_POKEMON:
+      console.log("Get all pokemon loaded", action.payload);
+      return {
+        ...state,
+        allPokemon: action.payload,
+        loading: true,
+      };
     default:
       return state;
   }
