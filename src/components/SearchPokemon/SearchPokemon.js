@@ -1,8 +1,14 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import PokemonContext from "../../context/pokemon/pokemonContext";
 
 const SearchPokemon = () => {
   const pokemonContext = useContext(PokemonContext);
+
+  useEffect(() => {
+    if (pokemonContext.pokemon.length !== 0) {
+      pokemonContext.displayContent(true);
+    }
+  }, []);
 
   const [text, setText] = useState("");
   const onSubmit = (e) => {

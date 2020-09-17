@@ -5,6 +5,7 @@ const DisplayAllPokemon = () => {
   const pokemonContext = useContext(PokemonContext);
 
   useEffect(() => {
+    pokemonContext.displayContent(false);
     if (pokemonContext.allPokemon.length <= 0) {
       pokemonContext.getAllPokemon();
     }
