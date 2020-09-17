@@ -1,18 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import style from "./NavBar.module.css";
 
 const NavBar = () => (
-  <div style={{ textAlign: "center" }}>
+  <nav className={style.container}>
     <li>
-      <Link to="/">Home</Link>
+      <NavLink exact to="/" activeClassName={style.selected}>
+        Home
+      </NavLink>
     </li>
     <li>
-      <Link to="/search">Search Pokemon</Link>
+      <NavLink exact to="/search" activeClassName={style.selected}>
+        Search Pokemon
+      </NavLink>
     </li>
     <li>
-      <Link to="/all">Display All Pokemon</Link>
+      <NavLink exact to="/all" activeClassName={style.selected}>
+        Display All Pokemon
+      </NavLink>
     </li>
-  </div>
+  </nav>
 );
 
 export default NavBar;
